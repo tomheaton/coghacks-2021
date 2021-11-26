@@ -11,15 +11,32 @@ datasource db {
 }
 
 model User {
-    id  Int @id @default(autoincrement())
-    name String
+    id Int @id @default(autoincrement())
+    username String @unique @db.VarChar(255)
+    name String @db.VarChar(255)
+    email String @unique @db.VarChar(255)
+    createdAt DateTime @default(now()) @map(name: "created_at")
+    updatedAt DateTime @updatedAt @map(name: "updated_at")
+    company Company? @relation(fields: [companyId], references: [id])
+    companyId Int @unique
 }
 
 model Company {
-    id  Int @id @default(autoincrement())
-    verified Boolean @default(false)
+    id Int @id @default(autoincrement())
+    name String @db.VarChar(255)
     location String @db.VarChar(255)
     telephone String @db.VarChar(255)
     email String @unique @db.VarChar(255)
-    sic String @db.VarChar(255)
+    sic String? @db.VarChar(255)
+    verified Boolean @default(false)
+    postings Posting[]
+    users User[]
+}
+
+model Posting {
+    id Int @id @default(autoincrement())
+    title String @db.VarChar(255)
+    description String @db.VarChar(255)
+    author Company @relation(fields: [authorId], references: [id])
+    authorId Int @unique
 }
