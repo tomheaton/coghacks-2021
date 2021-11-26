@@ -24,7 +24,7 @@ const Company: NextPage<Props> = (props) => {
             <h1>
                 Company
             </h1>
-            {props.data ? (
+            {props.data && props.data.length > 0 ? (
                 <>
                     <ul>
                         {props.data.map((company, index) => {

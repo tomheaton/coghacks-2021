@@ -24,7 +24,7 @@ const Posting: NextPage<Props> = (props) => {
             <h1>
                 Posting
             </h1>
-            {props.data ? (
+            {props.data && props.data.length > 0 ? (
                 <>
                     <ul>
                         {props.data.map((posting, index) => {

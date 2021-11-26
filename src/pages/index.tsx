@@ -1,14 +1,13 @@
 import type { NextPage } from 'next';
 import styles from '../styles/Home.module.css';
 import Head from 'next/head';
-import Image from 'next/image';
 
 const Home: NextPage = () => {
     return (
         <div className={styles.container}>
             <Head>
-                <title>lana</title>
-                <meta name="description" content="A place to find where you belong." />
+                <title>Lana</title>
+                <meta name="description" content="Lana - A place to find where you belong." />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
