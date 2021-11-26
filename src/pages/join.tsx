@@ -9,8 +9,20 @@ const Join: NextPage = () => {
 
             <div>
                 <h2>
-                    Join lana as a company or as a person.
+                    Join lana as...
                 </h2>
+
+                <div>
+
+                    <button>
+                        A Company
+                    </button>
+
+                    <button>
+                        An Individual
+                    </button>
+
+                </div>
             </div>
 
         </div>
