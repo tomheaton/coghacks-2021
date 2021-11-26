@@ -1,10 +1,10 @@
 import {GetServerSideProps, NextPage} from "next";
 import prisma from "../../lib/prisma";
-import type {Company} from "@prisma/client";
+import type {Posting} from "@prisma/client";
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
 
-    const data = await prisma.company.findMany();
+    const data = await prisma.posting.findMany();
 
     return {
         props: {
@@ -14,23 +14,23 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 }
 
 type Props = {
-    data: Company[] | null
+    data: Posting[] | null
 }
 
-const Company: NextPage<Props> = (props) => {
+const Posting: NextPage<Props> = (props) => {
 
     return (
         <div>
             <h1>
-                Company
+                Posting
             </h1>
             {props.data ? (
                 <>
                     <ul>
-                        {props.data.map((company, index) => {
+                        {props.data.map((posting, index) => {
                             return (
                                 <li key={index} id={`${index}`}>
-                                    {company.name}
+                                    {posting.title}
                                 </li>
                             );
                         })}
@@ -38,11 +38,11 @@ const Company: NextPage<Props> = (props) => {
                 </>
             ) : (
                 <>
-                    <p>no companies found</p>
+                    <p>no postings found</p>
                 </>
             )}
         </div>
     );
 }
 
-export default Company;
+export default Posting;
