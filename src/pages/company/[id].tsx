@@ -1,7 +1,6 @@
 import {GetServerSideProps, NextPage} from "next";
 import {Company} from "@prisma/client";
 import prisma from "../../lib/prisma";
-import React from "react";
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
 
@@ -26,33 +25,32 @@ type Props = {
     data: Company | null
 }
 
-//const CompanyPage: NextPage = (props: Props) => {
-const CompanyPage: React.FC<Props> = (props) => {
-
+const CompanyPage: NextPage<Props> = (props) => {
 
     if (props.data) {
+
+        const {name, verified, location, email, sic} = props.data;
+
         return (
             <div>
                 <h1>
-                    Company: {props.data.name}
+                    Company: {name}
+                    {verified && (<span>{" "}(verified)</span>)}
                 </h1>
-                <h2>
-                    Data
-                </h2>
-                <p>
-                    {props.data.toString()}
-                </p>
-            </div>
-        );
-    } else {
-        return (
-            <div>
-                <h1>
-                    No company found with that id!
-                </h1>
+                <p>Location: {location}</p>
+                <p>Contact Email: {email}</p>
+                <p>SIC: {sic}</p>
             </div>
         );
     }
+
+    return (
+        <div>
+            <h1>
+                No company found with that id!
+            </h1>
+        </div>
+    );
 
 }
 
