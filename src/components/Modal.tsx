@@ -14,7 +14,7 @@ const Modal = ({title, show, children}: {title: string, show: boolean, children:
 
     if (visible) {
         return (
-            <div className={styles.container} style={{zIndex: "999999999"}}>
+            <div className={styles.container}>
                 <h1>{title}</h1>
                 {children}
             </div>

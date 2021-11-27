@@ -4,6 +4,8 @@ import prisma from "../../lib/prisma";
 import Modal from "../../components/Modal";
 import {useState} from "react";
 import Webcam from "react-webcam";
+import QuestionBox from "../../components/QuestionBox";
+import {questions} from "../../data/questions";
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
 
@@ -53,6 +55,7 @@ const PostingPage: NextPage<Props> = (props) => {
             <div className={"main"}>
                 <h1>{title}</h1>
                 <p>{description}</p>
+                <QuestionBox questions={questions} />
                 <button onClick={handleClick}>
                     apply
                 </button>
