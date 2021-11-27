@@ -28,9 +28,9 @@ const UserPage = () => {
                 <p>{user.email}</p>
             </div>
         );
+    } else {
+        router.push("/");
     }
-
-    router.push("/");
 }
 
 export default UserPage;
