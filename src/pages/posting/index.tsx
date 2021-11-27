@@ -1,13 +1,20 @@
 import {GetServerSideProps, NextPage} from "next";
 import prisma from "../../lib/prisma";
-import type {Posting} from "@prisma/client";
+import type {Posting, Company} from "@prisma/client";
 import PostingCard from "../../components/PostingCard";
 import {useState} from "react";
 import Head from "next/head";
+import styles from "../../styles/Index.module.css";
+import CompanyCard from "../../components/CompanyCard";
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
 
-    const data = await prisma.posting.findMany();
+    // @ts-ignore
+    const data = await prisma.posting.findMany({
+        include: {
+            author: true
+        }
+    });
 
     return {
         props: {
@@ -17,7 +24,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 }
 
 type Props = {
-    data: Posting[] | null
+    data: Posting[] & {author: Company} | null
 }
 
 const Posting: NextPage<Props> = (props) => {
@@ -40,14 +47,21 @@ const Posting: NextPage<Props> = (props) => {
             <br/>
             {props.data && props.data.length > 0 ? (
                 <>
-                    <ul>
+{/*                    <ul>
                         {props.data.filter((result) => result.title.toLowerCase().includes(search)).map((posting, index) => {                            return (
                                 <li key={index} id={`${index}`}>
                                     <PostingCard posting={posting}/>
                                 </li>
                             );
                         })}
-                    </ul>
+                    </ul>*/}
+                    <div className={styles.grid}>
+                        {props.data.filter((result) => result.title.toLowerCase().includes(search)).map((posting, index) => {
+                            return (
+                                <PostingCard posting={posting}/>
+                            );
+                        })}
+                    </div>
                 </>
             ) : (
                 <>

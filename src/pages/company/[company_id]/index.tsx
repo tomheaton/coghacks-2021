@@ -38,8 +38,8 @@ const CompanyPage: NextPage<Props> = (props) => {
             <div className={"main"}>
                 <div>
                     <h1>
-                        Company: {name}
-                        {verified && (<span>{" "}(verified)</span>)}
+                        {name}{" "}
+                        {verified && (<i className="bi bi-patch-check-fill"/>)}
                     </h1>
                     <p>Location: {location}</p>
                     <p>Contact Email: {email}</p>

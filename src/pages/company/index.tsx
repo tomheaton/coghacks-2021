@@ -2,9 +2,9 @@ import {GetServerSideProps, NextPage} from "next";
 import prisma from "../../lib/prisma";
 import type {Company} from "@prisma/client";
 import CompanyCard from "../../components/CompanyCard";
-import {withPageAuthRequired} from "@auth0/nextjs-auth0";
 import {useState} from "react";
 import Head from "next/head";
+import styles from "../../styles/Index.module.css";
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
 
@@ -41,7 +41,7 @@ const Company: NextPage<Props> = (props) => {
             <br/>
             {props.data && props.data.length > 0 ? (
                 <>
-                    <ul>
+                    {/*<ul>
                         {props.data.filter((result) => result.name.toLowerCase().includes(search)).map((company, index) => {
                             return (
                                 <li key={index} id={`${index}`}>
@@ -49,7 +49,14 @@ const Company: NextPage<Props> = (props) => {
                                 </li>
                             );
                         })}
-                    </ul>
+                    </ul>*/}
+                    <div className={styles.grid}>
+                        {props.data.filter((result) => result.name.toLowerCase().includes(search)).map((company, index) => {
+                            return (
+                                <CompanyCard company={company}/>
+                            );
+                        })}
+                    </div>
                 </>
             ) : (
                 <>

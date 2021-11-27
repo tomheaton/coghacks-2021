@@ -1,5 +1,5 @@
 import {GetServerSideProps, NextPage} from "next";
-import {Posting} from "@prisma/client";
+import type {Posting, Company} from "@prisma/client";
 import prisma from "../../lib/prisma";
 import Modal from "../../components/Modal";
 import {useState} from "react";
@@ -16,6 +16,9 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
         where: {
             id: parsed_id
         },
+        include: {
+            author: true
+        }
     });
 
     return {
@@ -26,7 +29,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 }
 
 type Props = {
-    data: Posting | null
+    data: Posting & {author: Company} | null
 }
 
 const PostingPage: NextPage<Props> = (props) => {
@@ -49,12 +52,14 @@ const PostingPage: NextPage<Props> = (props) => {
 
     if (props.data) {
 
-        const {id, title, description} = props.data;
+        const {id, title, description, author} = props.data;
 
         return (
             <div className={"main"}>
                 <h1>{title}</h1>
-                <p>{description}</p>
+                <p>Description: {description}</p>
+                <p>Posting ID: {id}</p>
+                <p>Company: <a href={`/company/${author.id}`}>{author.name}</a></p>
                 <button className={"btn"} onClick={handleClick}>
                     Apply
                 </button>
