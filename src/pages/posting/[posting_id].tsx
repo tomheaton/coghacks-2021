@@ -6,9 +6,9 @@ import {useState} from "react";
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
 
-    const {id} = context.query;
+    const {posting_id} = context.query;
 
-    const parsed_id: number = typeof id === "string" ? parseInt(id) : 0
+    const parsed_id: number = typeof posting_id === "string" ? parseInt(posting_id) : 0
 
     const data = await prisma.posting.findUnique({
         where: {

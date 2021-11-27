@@ -4,9 +4,9 @@ import prisma from "../../../lib/prisma";
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
 
-    const {id} = context.query;
+    const {company_id} = context.query;
 
-    const parsed_id: number = typeof id === "string" ? parseInt(id) : 0
+    const parsed_id: number = typeof company_id === "string" ? parseInt(company_id) : 0
 
     const data = await prisma.company.findUnique({
         where: {
