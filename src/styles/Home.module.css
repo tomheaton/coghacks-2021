@@ -122,3 +122,17 @@
     border-radius: 10px;
     transition: color 0.15s ease, border-color 0.15s ease;
 }
+
+.navbar {
+    border: solid red 1px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.inner {
+    border: solid blue 1px;
+    display: flex;
+    margin-left: auto;
+}

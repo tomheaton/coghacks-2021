@@ -37,6 +37,13 @@ const PostingPage: NextPage<Props> = (props) => {
         setShowModal(true);
     }
 
+    const handleSubmit = async (e: any) => {
+        e.preventDefault();
+        console.log("submit");
+        // FIXME: modal not hiding
+        setShowModal(false);
+    }
+
     if (props.data) {
 
         const {id, title, description} = props.data;
@@ -50,7 +57,10 @@ const PostingPage: NextPage<Props> = (props) => {
                 </button>
                 <Modal title={"the title"} show={showModal}>
                     <p>Why do you want to apply for this position at our company?</p>
-                    <textarea onChange={(e) => {setAnswer(e.target.value)}}/>
+                    <textarea onChange={(e) => {setAnswer(e.target.value)}}
+                              rows={4}
+                    />
+                    <button type={"submit"} onClick={handleSubmit}>Submit</button>
                 </Modal>
             </div>
         );

@@ -3,6 +3,11 @@ import styles from '../styles/Home.module.css';
 import Head from 'next/head';
 
 const Home: NextPage = () => {
+
+    const handleBegin = () => {
+
+    }
+
     return (
         <div className={styles.container}>
             <Head>
@@ -11,6 +16,12 @@ const Home: NextPage = () => {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
+            <nav className={styles.navbar}>
+                <div className={styles.inner}>
+                    <p>Login</p>
+                </div>
+            </nav>
+
             <main className={styles.main}>
                 <h1 className={styles.title}>
                     lana
@@ -18,7 +29,7 @@ const Home: NextPage = () => {
                 <p className={styles.description}>
                     finding where you belong...
                 </p>
-                <button className={styles.beginButton}>
+                <button className={styles.beginButton} onClick={handleBegin}>
                     begin
                 </button>
             </main>
