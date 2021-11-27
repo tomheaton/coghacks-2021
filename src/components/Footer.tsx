@@ -14,11 +14,11 @@ const Footer = () => {
                 <div className={styles.card}>
                     <h2>Pages</h2>
                     <ul>
-                        <li>Company</li>
-                        <li>Posting</li>
-                        <li>User</li>
-                        <li>Profile</li>
-                        <li>Join</li>
+                        <li><a href={"/company"}>Company</a></li>
+                        <li><a href={"/posting"}>Posting</a></li>
+                        <li><a href={"/user"}>User</a></li>
+                        <li><a href={"/profile"}>Profile</a></li>
+                        <li><a href={"/join"}>Join</a></li>
                     </ul>
                 </div>
                 <div className={styles.card}>

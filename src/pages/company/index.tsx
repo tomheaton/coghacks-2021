@@ -53,7 +53,7 @@ const Company: NextPage<Props> = (props) => {
                     <div className={styles.grid}>
                         {props.data.filter((result) => result.name.toLowerCase().includes(search)).map((company, index) => {
                             return (
-                                <CompanyCard company={company}/>
+                                <CompanyCard key={index} company={company}/>
                             );
                         })}
                     </div>

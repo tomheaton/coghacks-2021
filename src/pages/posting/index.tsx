@@ -1,11 +1,10 @@
 import {GetServerSideProps, NextPage} from "next";
 import prisma from "../../lib/prisma";
-import type {Posting, Company} from "@prisma/client";
+import type {Company, Posting} from "@prisma/client";
 import PostingCard from "../../components/PostingCard";
 import {useState} from "react";
 import Head from "next/head";
 import styles from "../../styles/Index.module.css";
-import CompanyCard from "../../components/CompanyCard";
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
 
@@ -58,7 +57,7 @@ const Posting: NextPage<Props> = (props) => {
                     <div className={styles.grid}>
                         {props.data.filter((result) => result.title.toLowerCase().includes(search)).map((posting, index) => {
                             return (
-                                <PostingCard posting={posting}/>
+                                <PostingCard key={index} posting={posting}/>
                             );
                         })}
                     </div>
