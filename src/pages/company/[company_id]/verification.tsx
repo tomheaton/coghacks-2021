@@ -1,8 +1,8 @@
 import {useState} from "react";
 import {NextPage} from "next";
 import styles from "../../../styles/Verification.module.css";
-import prisma from "../../../lib/prisma";
 import {useRouter} from "next/router";
+import Head from "next/head";
 
 const Verification: NextPage = () => {
 
@@ -11,6 +11,7 @@ const Verification: NextPage = () => {
     const [telephone, setTelephone] = useState<string>("");
     const [email, setEmail] = useState<string>("");
     const [location, setLocation] = useState<string>("");
+    const [complete, setComplete] = useState<boolean>(false);
 
     const {company_id} = router.query;
 
@@ -20,16 +21,27 @@ const Verification: NextPage = () => {
         e.preventDefault();
         console.log("submitting verification request");
 
-        await fetch("https://coghacks-2021.vercel.app/api/verification").then((result) => {
+        await fetch("https://coghacks-2021.vercel.app/api/verification", {
+            method: "POST",
+            body: JSON.stringify({telephone, email, location})
+        }).then((result) => {
             console.log(`result: ${result}`)
         }).catch((error) => {
             console.log(`error: ${error}`)
-        })
-
+        }).finally(() => {
+            setComplete(true);
+        });
     }
 
     return (
         <div className={"main"}>
+
+            <Head>
+                <title>Verification | Lana</title>
+                <meta name="description" content="Lana - A place to find where you belong." />
+                <link rel="icon" href={"/favicon.ico"} />
+            </Head>
+
             <h1>Request Verification</h1>
             <br/>
             <form onSubmit={handleSubmit} className={styles.details}>
