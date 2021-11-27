@@ -1,5 +1,6 @@
 import {NextPage} from "next";
 import styles from "../styles/Join.module.css";
+import Head from "next/head";
 
 const Login: NextPage = () => {
 
@@ -10,6 +11,13 @@ const Login: NextPage = () => {
 
     return (
         <div className={"main"}>
+
+            <Head>
+                <title>Login | Lana</title>
+                <meta name="description" content="Lana - A place to find where you belong." />
+                <link rel="icon" href={"/favicon.ico"} />
+            </Head>
+
             <h1>
                 Login to Lana!
             </h1>

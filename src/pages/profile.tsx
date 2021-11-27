@@ -4,6 +4,7 @@ import {questions} from "../data/questions";
 import QuestionBox from "../components/QuestionBox";
 import {useState} from "react";
 import styles from "../styles/Profile.module.css";
+import Head from "next/head";
 
 export const getServerSideProps = withPageAuthRequired();
 
@@ -31,6 +32,13 @@ const Profile: NextPage<Props> = ({ user }) => {
 
     return (
         <div className={"main"}>
+
+            <Head>
+                <title>Profile | Lana</title>
+                <meta name="description" content="Lana - A place to find where you belong." />
+                <link rel="icon" href={"/favicon.ico"} />
+            </Head>
+
             <div>
                 <h2>Tasks</h2>
             </div>
@@ -42,6 +50,9 @@ const Profile: NextPage<Props> = ({ user }) => {
                     </button>
                     </>
                 )}
+                <button onClick={handleQuizStart} className={"btn"}>
+                    Create Company
+                </button>
                 <br/>
 {/*                <Modal title={"Personal Quiz"} show={takingQuiz}>
                     <QuestionBox questions={questions} />

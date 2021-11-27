@@ -5,7 +5,7 @@ import Image from "next/image";
 import {useRouter} from "next/router";
 import {useUser} from "@auth0/nextjs-auth0";
 
-const Home: NextPage = () => {
+const Index: NextPage = () => {
 
     const router = useRouter();
 
@@ -91,4 +91,4 @@ const Home: NextPage = () => {
     );
 }
 
-export default Home;
+export default Index;
