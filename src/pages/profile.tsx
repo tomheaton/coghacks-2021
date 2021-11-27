@@ -51,7 +51,7 @@ const Profile: NextPage<Props> = ({ user }) => {
                 <h2>Tasks</h2>
             </div>
             <div className={styles.tasks}>
-                {!takingQuiz && (
+                {!takingQuiz && task && (
                     <>
                     <button onClick={handleQuizStart} className={"btn"}>
                         Take Quiz
