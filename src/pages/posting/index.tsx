@@ -1,6 +1,7 @@
 import {GetServerSideProps, NextPage} from "next";
 import prisma from "../../lib/prisma";
 import type {Posting} from "@prisma/client";
+import PostingCard from "../../components/PostingCard";
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
 
@@ -30,7 +31,7 @@ const Posting: NextPage<Props> = (props) => {
                         {props.data.map((posting, index) => {
                             return (
                                 <li key={index} id={`${index}`}>
-                                    {posting.title}
+                                    <PostingCard posting={posting}/>
                                 </li>
                             );
                         })}
