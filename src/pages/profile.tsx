@@ -22,6 +22,7 @@ const Profile: NextPage<Props> = ({ user }) => {
 
     const handleSubmit = async (e: any) => {
         e.preventDefault();
+        setTakingQuiz(false)
     }
 
     const handleQuizStart = (e: any) => {

@@ -15,6 +15,7 @@ const QuestionBox = ({onSubmit, questions}: { onSubmit: any, questions: Question
                     );
                 })}
             </ul>
+            <br/>
             <button className={"btn"} type={"submit"}>
                 Submit
             </button>

@@ -3,7 +3,7 @@ const QuestionCard = ({question, answers}: {question: string, answers: string[]}
     return (
         <div>
             <p>{question}</p>
-            <div className={"buttonList"}>
+            <div className={"buttonList2"}>
                 {answers.map((answer, index) => {
                     return (
                         <button className={"btn"} key={index}>
