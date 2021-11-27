@@ -1,12 +1,13 @@
 import {withPageAuthRequired} from '@auth0/nextjs-auth0';
-import {NextPage} from "next";
+import {GetServerSideProps, NextPage} from "next";
 import {questions} from "../data/questions";
 import QuestionBox from "../components/QuestionBox";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import styles from "../styles/Profile.module.css";
 import Head from "next/head";
+import prisma from "../lib/prisma";
 
-export const getServerSideProps = withPageAuthRequired();
+export const getServerSideProps: GetServerSideProps = withPageAuthRequired();
 
 type Props = {
     user: any
@@ -18,6 +19,22 @@ const Profile: NextPage<Props> = ({ user }) => {
     const [currentQuestion, setCurrentQuestion] = useState<number>(0);
     const [takingQuiz, setTakingQuiz] = useState<boolean>(false);
     const [quizData, setQuizData] = useState<string[]>([]);
+    const [userData, setUserData] = useState<any>();
+
+    useEffect(() => {
+
+        const getData = async () => {
+            return await prisma.user.findUnique({
+                where: {
+                    email: user.email
+                }
+            })
+        }
+
+        setUserData(getData());
+        console.log(userData);
+
+    }, [user]);
 
     const handleQuizStart = (e: any) => {
         e.preventDefault();
@@ -50,9 +67,7 @@ const Profile: NextPage<Props> = ({ user }) => {
                     </button>
                     </>
                 )}
-                <button onClick={handleQuizStart} className={"btn"}>
-                    Create Company
-                </button>
+
                 <br/>
 {/*                <Modal title={"Personal Quiz"} show={takingQuiz}>
                     <QuestionBox questions={questions} />

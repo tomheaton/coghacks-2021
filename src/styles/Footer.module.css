@@ -9,8 +9,8 @@
     /*background: #DF5286*/
     /*background: rgb(210,77,128);*/
     /*background: linear-gradient(90deg, rgba(210,77,128,1) 0%, rgba(223,82,134,1) 19%, rgba(165,116,166,1) 57%, rgba(0,212,255,1) 100%);*/
-    background-color: #DF5286;
     opacity: 0.8;
+    background-color: #DF5286;
     background-image: radial-gradient(#021175 2px, #DF5286 2px);
     background-size: 40px 40px;
 }

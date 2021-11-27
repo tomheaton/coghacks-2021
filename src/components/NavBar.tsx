@@ -1,7 +1,7 @@
 import {useUser} from "@auth0/nextjs-auth0";
 import styles from "../styles/Navbar.module.css";
 import Image from "next/image";
-import {Breadcrumb, Container, Nav, Navbar} from "react-bootstrap";
+import {Container, Nav, Navbar} from "react-bootstrap";
 import {useRouter} from "next/router";
 
 const NavBar = () => {
