@@ -25,8 +25,9 @@ const Profile: NextPage<Props> = ({ user }) => {
         setTakingQuiz(true);
     }
 
-    const updateQuestion = () => {
-
+    const updateQuestion = (e: any) => {
+        setCurrentQuestion(currentQuestion + 1);
+        setQuizData(quizData => [...quizData, e.target.id]);
     }
 
     return (
@@ -43,9 +44,13 @@ const Profile: NextPage<Props> = ({ user }) => {
                     </>
                 )}
                 <br/>
-                <Modal title={"Personal Quiz"} show={takingQuiz}>
+{/*                <Modal title={"Personal Quiz"} show={takingQuiz}>
                     <QuestionBox questions={questions} />
-                </Modal>
+                </Modal>*/}
+
+                {takingQuiz && (
+                    <QuestionBox questions={questions} />
+                )}
             </div>
         </div>
     );
