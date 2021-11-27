@@ -1,0 +1,13 @@
+.wrapper {
+    width: 100%;
+}
+
+.navbar {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.profileImage {
+    border-radius: 50%;
+}

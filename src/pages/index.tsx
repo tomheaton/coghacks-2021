@@ -1,6 +1,7 @@
 import type { NextPage } from 'next';
 import styles from '../styles/Home.module.css';
 import Head from 'next/head';
+import Image from 'next/image';
 import {useRouter} from "next/router";
 import {useUser} from "@auth0/nextjs-auth0";
 
@@ -34,23 +35,9 @@ const Home: NextPage = () => {
                 <link rel="icon" href={"/favicon.ico"} />
             </Head>
 
-            <nav className={styles.navbar}>
-                <div className={styles.inner}>
-                    {user ? (
-                        <div>
-                            Welcome {user.name}! <a href={"/api/auth/logout"}>Logout</a>
-                        </div>
-                    ) : (
-                        <div>
-                            <a href={"/api/auth/login"}>Login</a>
-                        </div>
-                    )}
-                </div>
-            </nav>
-
             <main className={styles.main}>
                 <h1 className={styles.title}>
-                    lana 2
+                    lana 1
                 </h1>
                 <p className={styles.description}>
                     finding where you belong...
@@ -63,41 +50,31 @@ const Home: NextPage = () => {
             </main>
 
             <main className={styles.main}>
-                <h1 className={styles.title}>
-                    lana 3
-                </h1>
-                <p className={styles.description}>
-                    finding where you belong...
-                </p>
-                <div className={styles.buttonWrapper}>
-                    <button className={"btn"} onClick={handleBegin}>
-                        begin
-                    </button>
+                <div className={styles.grid}>
+                    <div className={styles.card}>
+                        <h2>heading</h2>
+                        <p>lololol</p>
+                        {/*<Image src={"/blob.svg"} height={400} width={400}/>*/}
+                    </div>
+                    <div className={styles.card}>
+                        <h2>heading 2</h2>
+                        <p>lololol 2</p>
+                    </div>
                 </div>
             </main>
 
             <main className={styles.main}>
-                <h1 className={styles.title}>
-                    lana 4
-                </h1>
-                <p className={styles.description}>
-                    finding where you belong...
-                </p>
-                <div className={styles.buttonWrapper}>
-                    <button className={"btn"} onClick={handleBegin}>
-                        begin
-                    </button>
+                <div className={styles.grid}>
+                    <div className={styles.card}>
+                        <h2>heading</h2>
+                        <p>lololol</p>
+                    </div>
+                    <div className={styles.card}>
+                        <h2>heading 2</h2>
+                        <p>lololol 2</p>
+                    </div>
                 </div>
             </main>
-
-            {/*<footer className={styles.footer}>
-                <a href="https://cognisess.com" target="_blank" rel="noopener noreferrer" >
-                    Powered by{' '}
-                    <span className={styles.logo}>
-                        <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-                    </span>
-                </a>
-            </footer>*/}
         </div>
     );
 }
