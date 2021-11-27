@@ -34,7 +34,7 @@ const ApplicationPage: NextPage<Props> = (props) => {
         return (
             <div>
                 <h1>
-                    lol
+                    ID: {id}
                 </h1>
             </div>
         );

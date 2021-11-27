@@ -39,6 +39,34 @@ const Home: NextPage = () => {
                 </div>
             </main>
 
+            <main className={styles.main}>
+                <h1 className={styles.title}>
+                    lana
+                </h1>
+                <p className={styles.description}>
+                    finding where you belong...
+                </p>
+                <div className={styles.buttonWrapper}>
+                    <button className={"btn"} onClick={handleBegin}>
+                        begin
+                    </button>
+                </div>
+            </main>
+
+            <main className={styles.main}>
+                <h1 className={styles.title}>
+                    lana
+                </h1>
+                <p className={styles.description}>
+                    finding where you belong...
+                </p>
+                <div className={styles.buttonWrapper}>
+                    <button className={"btn"} onClick={handleBegin}>
+                        begin
+                    </button>
+                </div>
+            </main>
+
             {/*<footer className={styles.footer}>
                 <a href="https://cognisess.com" target="_blank" rel="noopener noreferrer" >
                     Powered by{' '}

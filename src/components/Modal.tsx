@@ -3,7 +3,6 @@ import styles from "../styles/Modal.module.css"
 const Modal = ({title, show, children}: {title: string, show: boolean, children: any}) => {
 
     const [visible, setVisible] = useState<boolean>(false);
-    //const modalRef = useRef(null);
 
     useEffect(() => {
         console.log("hey")

@@ -1,6 +1,7 @@
 import {GetServerSideProps, NextPage} from "next";
 import {Company} from "@prisma/client";
 import prisma from "../../../lib/prisma";
+import {useRouter} from "next/router";
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
 
@@ -27,19 +28,26 @@ type Props = {
 
 const CompanyPage: NextPage<Props> = (props) => {
 
+    const router = useRouter();
+
     if (props.data) {
 
         const {name, verified, location, email, sic} = props.data;
 
         return (
             <div>
-                <h1>
-                    Company: {name}
-                    {verified && (<span>{" "}(verified)</span>)}
-                </h1>
-                <p>Location: {location}</p>
-                <p>Contact Email: {email}</p>
-                <p>SIC: {sic}</p>
+                <div>
+                    <h1>
+                        Company: {name}
+                        {verified && (<span>{" "}(verified)</span>)}
+                    </h1>
+                    <p>Location: {location}</p>
+                    <p>Contact Email: {email}</p>
+                    <p>SIC: {sic}</p>
+                </div>
+                <div>
+                    <button className={"btn"} onClick={() => {router.push(`${router.pathname}/application`)}}>View Applications</button>
+                </div>
             </div>
         );
     }

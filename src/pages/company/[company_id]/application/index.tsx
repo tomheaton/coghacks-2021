@@ -5,7 +5,15 @@ import ApplicationCard from "../../../../components/ApplicationCard";
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
 
-    const data = await prisma.application.findMany();
+    const {company_id} = context.query;
+
+    const parsed_id: number = typeof company_id === "string" ? parseInt(company_id) : 0
+
+    const data = await prisma.application.findMany({
+        where: {
+            posterId: parsed_id
+        }
+    });
 
     return {
         props: {
@@ -21,7 +29,7 @@ type Props = {
 const Application: NextPage<Props> = (props) => {
 
     return (
-        <div>
+        <div className={"container"}>
             <h1>
                 Application
             </h1>
