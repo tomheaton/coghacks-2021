@@ -1,6 +1,8 @@
 import {GetServerSideProps, NextPage} from "next";
 import {Posting} from "@prisma/client";
 import prisma from "../../lib/prisma";
+import Modal from "../../components/Modal";
+import {useState} from "react";
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
 
@@ -27,6 +29,14 @@ type Props = {
 
 const PostingPage: NextPage<Props> = (props) => {
 
+    const [showModal, setShowModal] = useState<boolean>(false);
+    const [answer, setAnswer] = useState<string>("");
+
+    const handleClick = async (e: any) => {
+        e.preventDefault();
+        setShowModal(true);
+    }
+
     if (props.data) {
 
         const {id, title, description} = props.data;
@@ -35,6 +45,13 @@ const PostingPage: NextPage<Props> = (props) => {
             <div>
                 <h1>{title}</h1>
                 <p>{description}</p>
+                <button onClick={handleClick}>
+                    apply
+                </button>
+                <Modal title={"the title"} show={showModal}>
+                    <p>Why do you want to apply for this position at our company?</p>
+                    <textarea onChange={(e) => {setAnswer(e.target.value)}}/>
+                </Modal>
             </div>
         );
     }
