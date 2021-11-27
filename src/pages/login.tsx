@@ -18,6 +18,7 @@ const Login: NextPage = () => {
                 <button className={"btn"} onClick={handleLogin}>
                     login
                 </button>
+                <a href={"/api/auth/login"}>Login new</a>
             </div>
         </div>
     );
