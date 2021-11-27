@@ -6,7 +6,7 @@ const Error500: NextPage = () => {
     return (
         <div className={"main"}>
             <h2>500</h2>
-            <p>This page does not exist :(</p>
+            <p>Sorry, it looks like there was an error on our end. Please retry later.</p>
             <Image src={"/default.png"} height={64} width={64}/>
         </div>
     );
