@@ -18,11 +18,13 @@ const Profile: NextPage<Props> = ({ user }) => {
     const [currentQuestion, setCurrentQuestion] = useState<number>(0);
     const [takingQuiz, setTakingQuiz] = useState<boolean>(false);
     const [quizData, setQuizData] = useState<string[]>([]);
-    const [userData, setUserData] = useState<any>();
+    const [userData, setUserData] = useState<any>({});
+    const [task, setTask] = useState<boolean>(true);
 
     const handleSubmit = async (e: any) => {
         e.preventDefault();
         setTakingQuiz(false)
+        setTask(false);
     }
 
     const handleQuizStart = (e: any) => {
@@ -56,6 +58,8 @@ const Profile: NextPage<Props> = ({ user }) => {
                     </button>
                     </>
                 )}
+
+                {!task && (<p>No tasks left.</p>)}
 
                 <br/>
 {/*                <Modal title={"Personal Quiz"} show={takingQuiz}>
