@@ -36,7 +36,8 @@ const Posting: NextPage<Props> = (props) => {
             <h1>
                 Posting
             </h1>
-            <input placeholder={"Search for a posting..."} onChange={(e) => {setSearch(e.target.value)}}/>
+            <input placeholder={"Search for a posting..."} onChange={(e) => {setSearch(e.target.value.toLowerCase())}}/>
+            <br/>
             {props.data && props.data.length > 0 ? (
                 <>
                     <ul>

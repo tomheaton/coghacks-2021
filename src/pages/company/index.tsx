@@ -37,7 +37,8 @@ const Company: NextPage<Props> = (props) => {
             <h1>
                 Company
             </h1>
-            <input placeholder={"Search for a company..."} onChange={(e) => {setSearch(e.target.value)}}/>
+            <input placeholder={"Search for a company..."} onChange={(e) => {setSearch(e.target.value.toLowerCase())}}/>
+            <br/>
             {props.data && props.data.length > 0 ? (
                 <>
                     <ul>

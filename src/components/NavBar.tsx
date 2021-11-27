@@ -1,11 +1,13 @@
 import {useUser} from "@auth0/nextjs-auth0";
 import styles from "../styles/Navbar.module.css";
 import Image from "next/image";
-import {Container, Navbar} from "react-bootstrap";
+import {Breadcrumb, Container, Nav, Navbar} from "react-bootstrap";
+import {useRouter} from "next/router";
 
 const NavBar = () => {
 
     const {user, error, isLoading} = useUser();
+    const router = useRouter();
 
     return (
         <Navbar>
@@ -21,6 +23,11 @@ const NavBar = () => {
                     Lana
                 </Navbar.Brand>
                 <Navbar.Toggle />
+                <Nav className="me-auto">
+                    <Nav.Link active={router.pathname === "/company"} href="/company">Company</Nav.Link>
+                    <Nav.Link active={router.pathname === "/posting"} href="/posting">Posting</Nav.Link>
+                    <Nav.Link active={router.pathname === "/user"} href="/user">User</Nav.Link>
+                </Nav>
                 <Navbar.Collapse className="justify-content-end">
                     {
                         user ? (

@@ -1,5 +1,5 @@
 import type {NextPage} from 'next';
-import styles from '../styles/Home.module.css';
+import styles from '../styles/Index.module.css';
 import Head from 'next/head';
 import Image from "next/image";
 import {useRouter} from "next/router";
@@ -53,23 +53,31 @@ const Index: NextPage = () => {
                 <div className={styles.grid}>
                     <div className={styles.card}>
                         <h2>For Applicants</h2>
-                        <p>
-                            - Fill in a short skills test to discover your best skills
-                            <br/>
-                            - Relay these desirable skills to an employer instantly when you apply
-                            <br/>
-                            - Remove the need for a CV
-                        </p>
+                        <ul>
+                            <li>
+                                Fill in a short skills test to discover your best skills
+                            </li>
+                            <li>
+                                Relay these desirable skills to an employer instantly when you apply
+                            </li>
+                            <li>
+                                Remove the need for a CV
+                            </li>
+                        </ul>
                     </div>
                     <div className={styles.card}>
                         <h2>For Employers</h2>
-                        <p>
-                            - Filter skills that you desire the most
-                            <br/>
-                            - Find the most suitable candidates for the role
-                            <br/>
-                            - Enable face to face interviews and videos
-                        </p>
+                        <ul>
+                            <li>
+                                Filter skills that you desire the most
+                            </li>
+                            <li>
+                                Find the most suitable candidates for the role
+                            </li>
+                            <li>
+                                Enable face to face interviews and videos
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </main>

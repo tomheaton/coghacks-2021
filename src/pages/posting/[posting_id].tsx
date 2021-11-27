@@ -4,6 +4,7 @@ import prisma from "../../lib/prisma";
 import Modal from "../../components/Modal";
 import {useState} from "react";
 import Webcam from "react-webcam";
+import ApplicationModal from "../../components/ApplicationModal";
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
 
@@ -32,6 +33,7 @@ const PostingPage: NextPage<Props> = (props) => {
 
     const [showModal, setShowModal] = useState<boolean>(false);
     const [answer, setAnswer] = useState<string>("");
+    const [loading, setLoading] = useState<boolean>(false);
 
     const handleClick = async (e: any) => {
         e.preventDefault();
@@ -53,17 +55,14 @@ const PostingPage: NextPage<Props> = (props) => {
             <div className={"main"}>
                 <h1>{title}</h1>
                 <p>{description}</p>
-                <button onClick={handleClick}>
-                    apply
+                <button className={"btn"} onClick={handleClick}>
+                    Apply
                 </button>
-                <Modal title={"the title"} show={showModal}>
+                <ApplicationModal title={"Answer the question below"} show={showModal}>
                     <p>Why do you want to apply for this position at our company?</p>
-                    {/*<textarea onChange={(e) => {setAnswer(e.target.value)}}
-                              rows={4}
-                    />*/}
                     <Webcam/>
-                    <button className={"btn"} type={"submit"} onClick={handleSubmit}>Submit</button>
-                </Modal>
+                    <button className={"btn"} onClick={handleSubmit}>Submit</button>
+                </ApplicationModal>
             </div>
         );
     }
