@@ -1,28 +1,15 @@
-import {Image} from "react-bootstrap";
 import {NextPage} from "next";
+import {Image} from "react-bootstrap";
 
-const Error500: NextPage<{statusCode: number}> = ({statusCode}) => {
+const Error500: NextPage = () => {
 
     return (
         <div className={"main"}>
-            <p>
-                {
-                    statusCode
-                        ? `An error ${statusCode} occurred on server`
-                        : `An error occurred on client`
-                }
-            </p>
-            <br/>
-            <Image src={"/default.png"} height={512} width={512}/>
+            <h2>500</h2>
+            <p>This page does not exist :(</p>
+            <Image src={"/default.png"} height={64} width={64}/>
         </div>
     );
-}
-
-Error500.getInitialProps = ({ res, err }: any) => {
-    const statusCode = res ? res.statusCode : err ? err.statusCode : 404;
-    return {
-        statusCode
-    };
 }
 
 export default Error500;
