@@ -6,7 +6,7 @@ const QuestionCard = ({question, answers}: {question: string, answers: string[]}
             <div>
                 {answers.map((answer, index) => {
                     return (
-                        <button key={index}>
+                        <button className={"btn"} key={index}>
                             {answer}
                         </button>
                     );
