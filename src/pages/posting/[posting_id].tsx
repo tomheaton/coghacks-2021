@@ -45,7 +45,7 @@ const PostingPage: NextPage<Props> = (props) => {
 
     const handleSubmit = async (e: any) => {
         e.preventDefault();
-        console.log("submit");
+        console.log("close");
         // FIXME: modal not hiding
         setShowModal(false);
     }
@@ -63,11 +63,13 @@ const PostingPage: NextPage<Props> = (props) => {
                 <button className={"btn"} onClick={handleClick}>
                     Apply
                 </button>
-                <ApplicationModal title={"Answer the question below"} show={showModal}>
-                    <p>Why do you want to apply for this position at our company?</p>
-                    <Webcam/>
-                    <button className={"btn"} onClick={handleSubmit}>Submit</button>
-                </ApplicationModal>
+                {showModal && (
+                    <ApplicationModal title={"Answer the question below"} show={showModal}>
+                        <p>Why do you want to apply for this position at our company?</p>
+                        <Webcam/>
+                        <button className={"btn"} onClick={handleSubmit}>Submit</button>
+                    </ApplicationModal>
+                )}
             </div>
         );
     }

@@ -1,12 +1,16 @@
 import {NextPage} from "next";
 import styles from "../styles/Join.module.css";
 import Head from "next/head";
+import {useRouter} from "next/router";
 
 const Join: NextPage = () => {
+
+    const router = useRouter();
 
     const handleSubmit = async (e: any) => {
         e.preventDefault();
         console.log("join");
+        await router.push("/api/auth/login");
     }
 
     return (
