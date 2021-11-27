@@ -4,8 +4,6 @@ import prisma from "../../lib/prisma";
 import Modal from "../../components/Modal";
 import {useState} from "react";
 import Webcam from "react-webcam";
-import QuestionBox from "../../components/QuestionBox";
-import {questions} from "../../data/questions";
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
 

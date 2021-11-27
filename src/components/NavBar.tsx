@@ -1,7 +1,7 @@
 import {useUser} from "@auth0/nextjs-auth0";
 import styles from "../styles/Navbar.module.css";
 import Image from "next/image";
-import {Navbar, Container} from "react-bootstrap";
+import {Container, Navbar} from "react-bootstrap";
 
 const NavBar = () => {
 

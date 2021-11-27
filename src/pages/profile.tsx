@@ -4,7 +4,6 @@ import {questions} from "../data/questions";
 import QuestionBox from "../components/QuestionBox";
 import {useState} from "react";
 import styles from "../styles/Profile.module.css";
-import Modal from "../components/Modal";
 
 export const getServerSideProps = withPageAuthRequired();
 
