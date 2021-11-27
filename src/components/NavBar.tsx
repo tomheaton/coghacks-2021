@@ -7,37 +7,19 @@ const NavBar = () => {
 
     const {user, error, isLoading} = useUser();
 
-/*    return (
-        <div className={styles.wrapper}>
-            <div className={styles.navbar}>
-                {user ? (
-                    <div className={styles.holder}>
-                        <div>
-                            <a href={"/api/auth/logout"}>
-                                <p>Logout</p>
-                            </a>
-                        </div>
-                        <a href={"/profile"}>
-                            <Image className={styles.profileImage} src={user.picture ? user.picture : "/default.png"}
-                                   height={40} width={40}
-                            />
-                        </a>
-                    </div>
-                ) : (
-                    <div className={styles.holder}>
-                        <a href={"/api/auth/login"}>
-                            <p>Login</p>
-                        </a>
-                    </div>
-                )}
-            </div>
-        </div>
-    );*/
-
     return (
         <Navbar>
             <Container>
-                <Navbar.Brand href="#home">Navbar with text</Navbar.Brand>
+                <Navbar.Brand href={"/"}>
+                    <img
+                        alt=""
+                        src={"/default.png"}
+                        width="30"
+                        height="30"
+                        className="d-inline-block align-top"
+                    />{' '}
+                    Lana
+                </Navbar.Brand>
                 <Navbar.Toggle />
                 <Navbar.Collapse className="justify-content-end">
                     {

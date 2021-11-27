@@ -1,4 +1,5 @@
 import {NextPage} from "next";
+import styles from "../styles/Join.module.css";
 
 const Join: NextPage = () => {
 
@@ -12,7 +13,7 @@ const Join: NextPage = () => {
             <h1>
                 Join Lana!
             </h1>
-            <div>
+            <div className={styles.details}>
                 <input placeholder={"username"}/>
                 <input placeholder={"password"}/>
                 <button className={"btn"} onClick={handleJoin}>
