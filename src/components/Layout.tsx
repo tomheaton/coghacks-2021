@@ -1,8 +1,10 @@
+import Navbar from "./Navbar";
+
 const Layout = ({children}: { children: any }) => {
 
     return (
         <>
-            {/*<Navbar />*/}
+            <Navbar />
             <main>{children}</main>
             {/*<Footer />*/}
         </>

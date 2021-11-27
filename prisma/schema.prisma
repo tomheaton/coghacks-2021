@@ -10,13 +10,13 @@ datasource db {
 model User {
   id           Int          @id @default(autoincrement())
   username     String       @unique @db.VarChar(255)
-  name         String       @db.VarChar(255)
+  name         String?      @db.VarChar(255)
   email        String       @unique @db.VarChar(255)
   createdAt    DateTime     @default(now()) @map("created_at")
   updatedAt    DateTime     @updatedAt @map("updated_at")
-  companyId    Int          @unique
-  company      Company      @relation(fields: [companyId], references: [id])
-  applications Application[]
+  companyId    Int?         @unique
+  company      Company?     @relation(fields: [companyId], references: [id])
+  applications Application?
 }
 
 model Company {
@@ -27,9 +27,9 @@ model Company {
   email        String       @unique @db.VarChar(255)
   sic          String?      @db.VarChar(255)
   verified     Boolean      @default(false)
-  applications Application[]
-  postings     Posting[]
-  users        User[]
+  applications Application?
+  postings     Posting?
+  users        User?
 }
 
 model Posting {
