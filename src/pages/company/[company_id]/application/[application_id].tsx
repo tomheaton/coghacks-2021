@@ -1,6 +1,6 @@
 import {GetServerSideProps, NextPage} from "next";
-import {Company} from "@prisma/client";
-import prisma from "../../lib/prisma";
+import {Application} from "@prisma/client";
+import prisma from "../../../../lib/prisma";
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
 
@@ -8,7 +8,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 
     const parsed_id: number = typeof id === "string" ? parseInt(id) : 0
 
-    const data = await prisma.company.findUnique({
+    const data = await prisma.application.findUnique({
         where: {
             id: parsed_id
         },
@@ -22,24 +22,20 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 }
 
 type Props = {
-    data: Company | null
+    data: Application | null
 }
 
-const CompanyPage: NextPage<Props> = (props) => {
+const ApplicationPage: NextPage<Props> = (props) => {
 
     if (props.data) {
 
-        const {name, verified, location, email, sic} = props.data;
+        const {id} = props.data;
 
         return (
             <div>
                 <h1>
-                    Company: {name}
-                    {verified && (<span>{" "}(verified)</span>)}
+                    lol
                 </h1>
-                <p>Location: {location}</p>
-                <p>Contact Email: {email}</p>
-                <p>SIC: {sic}</p>
             </div>
         );
     }
@@ -47,11 +43,11 @@ const CompanyPage: NextPage<Props> = (props) => {
     return (
         <div>
             <h1>
-                No company found with that id!
+                No application found with that id!
             </h1>
         </div>
     );
 
 }
 
-export default CompanyPage;
+export default ApplicationPage;

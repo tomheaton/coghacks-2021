@@ -1,12 +1,11 @@
 import {GetServerSideProps, NextPage} from "next";
-import prisma from "../../../lib/prisma";
-import type {Company} from "@prisma/client";
-import PostingCard from "../../../components/PostingCard";
-import CompanyCard from "../../../components/CompanyCard";
+import prisma from "../../../../lib/prisma";
+import type {Application} from "@prisma/client";
+import ApplicationCard from "../../../../components/ApplicationCard";
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
 
-    const data = await prisma.company.findMany();
+    const data = await prisma.application.findMany();
 
     return {
         props: {
@@ -16,7 +15,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 }
 
 type Props = {
-    data: Company[] | null
+    data: Application[] | null
 }
 
 const Application: NextPage<Props> = (props) => {
@@ -24,15 +23,15 @@ const Application: NextPage<Props> = (props) => {
     return (
         <div>
             <h1>
-                Company
+                Application
             </h1>
             {props.data && props.data.length > 0 ? (
                 <>
                     <ul>
-                        {props.data.map((company, index) => {
+                        {props.data.map((application, index) => {
                             return (
                                 <li key={index} id={`${index}`}>
-                                    <CompanyCard company={company}/>
+                                    <ApplicationCard application={application}/>
                                 </li>
                             );
                         })}
@@ -40,7 +39,7 @@ const Application: NextPage<Props> = (props) => {
                 </>
             ) : (
                 <>
-                    <p>no companies found</p>
+                    <p>no applications found</p>
                 </>
             )}
         </div>
