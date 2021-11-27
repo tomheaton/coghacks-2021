@@ -45,10 +45,17 @@ const CompanyPage: NextPage<Props> = (props) => {
                     <p>Contact Email: {email}</p>
                     <p>SIC: {sic}</p>
                 </div>
-                <div>
+                <div className={"buttonList"}>
                     <button className={"btn"} onClick={() => {
                         router.push(`/company/${router.query.company_id}/application`)}
                     }>View Applications</button>
+
+                    {!verified && (
+                        <button className={"btn"} onClick={() => {router.push(`/company/${router.query.company_id}/verification`)}}>
+                            Get Verified
+                        </button>
+                    )}
+
                 </div>
             </div>
         );
