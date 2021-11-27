@@ -1,6 +1,7 @@
 import type {NextPage} from 'next';
 import styles from '../styles/Home.module.css';
 import Head from 'next/head';
+import Image from "next/image";
 import {useRouter} from "next/router";
 import {useUser} from "@auth0/nextjs-auth0";
 
@@ -75,9 +76,10 @@ const Home: NextPage = () => {
 
             <main className={styles.main}>
                 <div className={styles.grid}>
-                    <div className={styles.card}>
+                    <div className={styles.card} style={{overflow: "hidden"}}>
                         <h2>heading</h2>
                         <p>lololol</p>
+                        <Image src={"/lana-mockup.png"} height={600} width={800}/>
                     </div>
                     <div className={styles.card}>
                         <h2>heading 2</h2>
