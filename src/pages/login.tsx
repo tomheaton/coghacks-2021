@@ -16,7 +16,7 @@ const Login: NextPage = () => {
                 <input placeholder={"username"}/>
                 <input placeholder={"password"}/>
                 <button className={"btn"} onClick={handleLogin}>
-                    login
+                    Login
                 </button>
                 <a href={"/api/auth/login"}>Login new</a>
             </div>

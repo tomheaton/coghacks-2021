@@ -9,11 +9,17 @@ const Footer = () => {
             <div className={styles.grid}>
                 <div className={styles.card}>
                     <h2>Lana</h2>
-                    <Image src={"/default.png"} alt="Vercel Logo" width={128} height={128} />
+                    <Image src={"/default.png"} alt="Lana Logo" width={128} height={128} />
                 </div>
                 <div className={styles.card}>
-                    <h2>Our Pages</h2>
-                    <p>lololol 2</p>
+                    <h2>Pages</h2>
+                    <ul>
+                        <li>Company</li>
+                        <li>Posting</li>
+                        <li>User</li>
+                        <li>Profile</li>
+                        <li>Join</li>
+                    </ul>
                 </div>
                 <div className={styles.card}>
                     <h2>Stay up to date</h2>

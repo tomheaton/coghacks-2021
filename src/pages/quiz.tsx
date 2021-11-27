@@ -9,20 +9,17 @@ type Props = {
     user: any
 }
 
-const Profile: NextPage<Props> = ({ user }) => {
+const Quiz: NextPage<Props> = ({ user }) => {
     return (
         <div className={"main"}>
+            <h1>
+                Quiz
+            </h1>
             <div>
-                user information
-            </div>
-            <div>
-                take test
-                <button>
-                    <QuestionBox questions={questions} />
-                </button>
+                <QuestionBox questions={questions} />
             </div>
         </div>
     );
 }
 
-export default Profile;
+export default Quiz;

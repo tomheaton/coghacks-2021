@@ -16,7 +16,7 @@ const Join: NextPage = () => {
                 <input placeholder={"username"}/>
                 <input placeholder={"password"}/>
                 <button className={"btn"} onClick={handleJoin}>
-                    join
+                    Join
                 </button>
             </div>
         </div>

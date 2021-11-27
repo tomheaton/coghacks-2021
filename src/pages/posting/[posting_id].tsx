@@ -55,7 +55,6 @@ const PostingPage: NextPage<Props> = (props) => {
             <div className={"main"}>
                 <h1>{title}</h1>
                 <p>{description}</p>
-                <QuestionBox questions={questions} />
                 <button onClick={handleClick}>
                     apply
                 </button>
