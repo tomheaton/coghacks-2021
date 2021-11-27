@@ -38,7 +38,7 @@ const ApplicationPage: NextPage<Props> = (props) => {
                 </h1>
                 <div>
                     <video controls>
-                        <source src={"./demo.mp4"} type="video/mp4" />
+                        <source src={"/demo_video.mp4"} type="video/mp4" />
                     </video>
                 </div>
             </div>

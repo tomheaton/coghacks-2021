@@ -9,7 +9,7 @@ const ApplicationCard = ({application}: {application: Application}) => {
     const handleClick = async (e: any) => {
         e.preventDefault()
         await router.push(
-            `/application/${application.id}`
+            `/company/${router.query.company_id}/application/${application.id}`
         )
     }
 

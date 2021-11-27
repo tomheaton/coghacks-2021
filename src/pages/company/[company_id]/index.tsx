@@ -46,7 +46,9 @@ const CompanyPage: NextPage<Props> = (props) => {
                     <p>SIC: {sic}</p>
                 </div>
                 <div>
-                    <button className={"btn"} onClick={() => {router.push(`${router.pathname}/application`)}}>View Applications</button>
+                    <button className={"btn"} onClick={() => {
+                        router.push(`company/${router.query.company_id}/application`)}
+                    }>View Applications</button>
                 </div>
             </div>
         );
