@@ -12,7 +12,7 @@ const Join: NextPage = () => {
                     Join lana as...
                 </h2>
                 <div>
-                    <button>
+                    <button className={"btn"}>
                         An Individual
                     </button>
                 </div>

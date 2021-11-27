@@ -19,6 +19,7 @@ model User {
     updatedAt DateTime @updatedAt @map(name: "updated_at")
     company Company? @relation(fields: [companyId], references: [id])
     companyId Int @unique
+    applications Application[]
 }
 
 model Company {
@@ -31,6 +32,7 @@ model Company {
     verified Boolean @default(false)
     postings Posting[]
     users User[]
+    applications Application[]
 }
 
 model Posting {
@@ -39,4 +41,12 @@ model Posting {
     description String @db.VarChar(255)
     author Company @relation(fields: [authorId], references: [id])
     authorId Int @unique
+}
+
+model Application {
+    id Int @id @default(autoincrement())
+    applicant User @relation(fields: [applicantId], references: [id])
+    applicantId Int @unique
+    company Company @relation(fields: [companyId], references: [id])
+    companyId Int @unique
 }

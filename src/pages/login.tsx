@@ -10,6 +10,9 @@ const Login: NextPage = () => {
             <div>
                 <input placeholder={"username"}/>
                 <input placeholder={"password"}/>
+                <button className={"btn"}>
+                    login
+                </button>
             </div>
         </div>
     );

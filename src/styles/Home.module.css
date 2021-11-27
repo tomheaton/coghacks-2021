@@ -135,4 +135,5 @@
     border: solid blue 1px;
     display: flex;
     margin-left: auto;
+    justify-items: end;
 }

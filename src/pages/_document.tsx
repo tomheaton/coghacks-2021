@@ -16,11 +16,11 @@ class MyDocument extends Document {
                     <link rel="manifest" href="/manifest.json"/>
 
                     <meta charSet="utf-8" />
-                    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+                    {/*<meta name="viewport" content="width=device-width, initial-scale=1"/>*/}
                     <meta name="description" content="Lana - A place to find where you belong."/>
                     <meta name="keywords" content="Job, Jobs, Work, Employer, Employment, Employee"/>
 
-                    <title>Lana</title>
+                    {/*<title>Lana</title>*/}
                 </Head>
                 <body>
                     <Main/>

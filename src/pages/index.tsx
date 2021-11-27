@@ -1,11 +1,14 @@
 import type { NextPage } from 'next';
 import styles from '../styles/Home.module.css';
 import Head from 'next/head';
+import {useRouter} from "next/router";
 
 const Home: NextPage = () => {
 
-    const handleBegin = () => {
+    const router = useRouter();
 
+    const handleBegin = async () => {
+        await router.push("/join");
     }
 
     return (
@@ -29,9 +32,11 @@ const Home: NextPage = () => {
                 <p className={styles.description}>
                     finding where you belong...
                 </p>
-                <button className={styles.beginButton} onClick={handleBegin}>
-                    begin
-                </button>
+                <div className={styles.buttonWrapper}>
+                    <button className={"btn"} onClick={handleBegin}>
+                        begin
+                    </button>
+                </div>
             </main>
 
             {/*<footer className={styles.footer}>

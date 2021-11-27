@@ -60,7 +60,7 @@ const PostingPage: NextPage<Props> = (props) => {
                     <textarea onChange={(e) => {setAnswer(e.target.value)}}
                               rows={4}
                     />
-                    <button type={"submit"} onClick={handleSubmit}>Submit</button>
+                    <button className={"btn"} type={"submit"} onClick={handleSubmit}>Submit</button>
                 </Modal>
             </div>
         );
