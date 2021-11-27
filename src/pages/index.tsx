@@ -12,7 +12,7 @@ const Index: NextPage = () => {
     const { user, error, isLoading } = useUser();
 
     const handleBegin = async () => {
-        await router.push("/join");
+        await router.push("/api/auth/login");
     }
 
     if (isLoading) {

@@ -23,15 +23,15 @@ const Profile: NextPage<Props> = ({ user }) => {
 
     useEffect(() => {
 
-        const getData = async () => {
-            return await prisma.user.findUnique({
-                where: {
-                    email: user.email
-                }
-            })
-        }
+        // const getData = async () => {
+        //     return await prisma.user.findUnique({
+        //         where: {
+        //             email: user.email
+        //         }
+        //     })
+        // }
 
-        setUserData(getData());
+        //setUserData(getData());
         console.log(userData);
 
     }, [user]);
