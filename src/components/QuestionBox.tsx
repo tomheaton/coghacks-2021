@@ -2,10 +2,10 @@ import type {Question} from "../types/types";
 import QuestionCard from "./QuestionCard";
 import styles from "../styles/QuestionBox.module.css";
 
-const QuestionBox = ({questions}: { questions: Question[] }) => {
+const QuestionBox = ({onSubmit, questions}: { onSubmit: any, questions: Question[] }) => {
 
     return (
-        <div className={styles.box}>
+        <form onSubmit={onSubmit} className={styles.box}>
             <ul>
                 {questions.map((question, index) => {
                     return (
@@ -15,7 +15,10 @@ const QuestionBox = ({questions}: { questions: Question[] }) => {
                     );
                 })}
             </ul>
-        </div>
+            <button className={"btn"} type={"submit"}>
+                Submit
+            </button>
+        </form>
     );
 };
 

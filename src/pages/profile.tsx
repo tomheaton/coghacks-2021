@@ -20,20 +20,9 @@ const Profile: NextPage<Props> = ({ user }) => {
     const [quizData, setQuizData] = useState<string[]>([]);
     const [userData, setUserData] = useState<any>();
 
-    useEffect(() => {
-
-        // const getData = async () => {
-        //     return await prisma.user.findUnique({
-        //         where: {
-        //             email: user.email
-        //         }
-        //     })
-        // }
-
-        //setUserData(getData());
-        console.log(userData);
-
-    }, [user]);
+    const handleSubmit = async (e: any) => {
+        e.preventDefault();
+    }
 
     const handleQuizStart = (e: any) => {
         e.preventDefault();
@@ -73,7 +62,7 @@ const Profile: NextPage<Props> = ({ user }) => {
                 </Modal>*/}
 
                 {takingQuiz && (
-                    <QuestionBox questions={questions} />
+                    <QuestionBox onSubmit={handleSubmit} questions={questions} />
                 )}
             </div>
         </div>
