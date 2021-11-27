@@ -1,6 +1,6 @@
-import type { NextApiRequest, NextApiResponse } from 'next';
+import type {NextApiRequest, NextApiResponse} from 'next';
 import prisma from "../../lib/prisma";
-import type {Company, User, Application, Posting} from "@prisma/client";
+import type {Application, Company, Posting, User} from "@prisma/client";
 
 type Data = {
     company_data: Company[],

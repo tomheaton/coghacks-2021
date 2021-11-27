@@ -29,7 +29,7 @@ type Props = {
 const Application: NextPage<Props> = (props) => {
 
     return (
-        <div className={"container"}>
+        <div className={"main"}>
             <h1>
                 Application
             </h1>

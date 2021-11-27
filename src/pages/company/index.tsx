@@ -1,7 +1,6 @@
 import {GetServerSideProps, NextPage} from "next";
 import prisma from "../../lib/prisma";
 import type {Company} from "@prisma/client";
-import PostingCard from "../../components/PostingCard";
 import CompanyCard from "../../components/CompanyCard";
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
@@ -22,7 +21,7 @@ type Props = {
 const Company: NextPage<Props> = (props) => {
 
     return (
-        <div>
+        <div className={"main"}>
             <h1>
                 Company
             </h1>

@@ -32,7 +32,7 @@ const ApplicationPage: NextPage<Props> = (props) => {
         const {id} = props.data;
 
         return (
-            <div>
+            <div className={"main"}>
                 <h1>
                     ID: {id}
                 </h1>
@@ -41,7 +41,7 @@ const ApplicationPage: NextPage<Props> = (props) => {
     }
 
     return (
-        <div>
+        <div className={"main"}>
             <h1>
                 No application found with that id!
             </h1>

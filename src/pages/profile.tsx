@@ -1,4 +1,4 @@
-import { withPageAuthRequired } from '@auth0/nextjs-auth0';
+import {withPageAuthRequired} from '@auth0/nextjs-auth0';
 import {NextPage} from "next";
 
 export const getServerSideProps = withPageAuthRequired();
@@ -9,7 +9,7 @@ type Props = {
 
 const Profile: NextPage<Props> = ({ user }) => {
     return (
-        <div>
+        <div className={"main"}>
             <p>
                 hello {user.name}
             </p>

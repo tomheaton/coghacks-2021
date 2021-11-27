@@ -1,5 +1,6 @@
 import {useUser} from "@auth0/nextjs-auth0";
 import styles from "../styles/Navbar.module.css";
+import Image from "next/image";
 
 const Navbar = () => {
 
@@ -9,15 +10,23 @@ const Navbar = () => {
         <div className={styles.wrapper}>
             <div className={styles.navbar}>
                 {user ? (
-                    <>
+                    <div className={styles.holder}>
                         <div>
-                            <a href={"/api/auth/logout"}>Logout</a>
+                            <a href={"/api/auth/logout"}>
+                                <p>Logout</p>
+                            </a>
                         </div>
-                        <img className={styles.profileImage} src={user.picture ? user.picture : "./default.png"}/>
-                    </>
+                        <a href={"/profile"}>
+                            <Image className={styles.profileImage} src={user.picture ? user.picture : "/default.png"}
+                                   height={40} width={40}
+                            />
+                        </a>
+                    </div>
                 ) : (
-                    <div>
-                        <a href={"/api/auth/login"}>Login</a>
+                    <div className={styles.holder}>
+                        <a href={"/api/auth/login"}>
+                            <p>Login</p>
+                        </a>
                     </div>
                 )}
             </div>

@@ -8,7 +8,7 @@ const Login: NextPage = () => {
     }
 
     return (
-        <div>
+        <div className={"main"}>
             <h1>
                 Login to Lana!
             </h1>

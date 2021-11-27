@@ -8,7 +8,7 @@ const Join: NextPage = () => {
     }
 
     return (
-        <div>
+        <div className={"main"}>
             <h1>
                 Join Lana!
             </h1>

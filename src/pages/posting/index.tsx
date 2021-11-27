@@ -21,7 +21,7 @@ type Props = {
 const Posting: NextPage<Props> = (props) => {
 
     return (
-        <div>
+        <div className={"main"}>
             <h1>
                 Posting
             </h1>

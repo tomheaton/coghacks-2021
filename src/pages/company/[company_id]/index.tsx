@@ -35,7 +35,7 @@ const CompanyPage: NextPage<Props> = (props) => {
         const {name, verified, location, email, sic} = props.data;
 
         return (
-            <div>
+            <div className={"main"}>
                 <div>
                     <h1>
                         Company: {name}

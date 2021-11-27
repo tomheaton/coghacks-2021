@@ -3,6 +3,7 @@ import {Posting} from "@prisma/client";
 import prisma from "../../lib/prisma";
 import Modal from "../../components/Modal";
 import {useState} from "react";
+import Webcam from "react-webcam";
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
 
@@ -49,7 +50,7 @@ const PostingPage: NextPage<Props> = (props) => {
         const {id, title, description} = props.data;
 
         return (
-            <div>
+            <div className={"main"}>
                 <h1>{title}</h1>
                 <p>{description}</p>
                 <button onClick={handleClick}>
@@ -57,9 +58,10 @@ const PostingPage: NextPage<Props> = (props) => {
                 </button>
                 <Modal title={"the title"} show={showModal}>
                     <p>Why do you want to apply for this position at our company?</p>
-                    <textarea onChange={(e) => {setAnswer(e.target.value)}}
+                    {/*<textarea onChange={(e) => {setAnswer(e.target.value)}}
                               rows={4}
-                    />
+                    />*/}
+                    <Webcam/>
                     <button className={"btn"} type={"submit"} onClick={handleSubmit}>Submit</button>
                 </Modal>
             </div>
