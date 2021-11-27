@@ -5,6 +5,18 @@ html, body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
+body::-webkit-scrollbar {
+    display: none;
+}
+
+*::selection {
+    background: #DF5286;
+}
+
+*::-moz-selection {
+    background: #DF5286;
+}
+
 * {
     box-sizing: border-box;
 }

@@ -1,4 +1,6 @@
-export const questions = [
+import {Question} from "../types/types";
+
+export const questions: Question[] = [
     {
         question: "What is a key element in Teamwork?",
         type: "Teamwork",
@@ -47,8 +49,9 @@ export const questions = [
         type: "Teamwork",
         answer: 0,
         answers: [
-
-            "Communication, organisation and honesty","Active and disorganisation", "Motivation and always late"
+            "Communication, organisation and honesty",
+            "Active and disorganisation",
+            "Motivation and always late"
         ]
     },
     {

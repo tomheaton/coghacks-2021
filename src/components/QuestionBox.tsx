@@ -1,10 +1,4 @@
-
-type Question = {
-    question: string
-    answer: number
-    answers: [string]
-    type: string
-}
+import type {Question} from "../types/types";
 
 const QuestionBox = ({questions}: {questions: Question[]}) => {
 
