@@ -5,7 +5,6 @@ import QuestionBox from "../components/QuestionBox";
 import {useEffect, useState} from "react";
 import styles from "../styles/Profile.module.css";
 import Head from "next/head";
-import prisma from "../lib/prisma";
 
 export const getServerSideProps: GetServerSideProps = withPageAuthRequired();
 
