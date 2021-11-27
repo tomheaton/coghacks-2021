@@ -87,12 +87,12 @@ const Index: NextPage = () => {
                     <div className={styles.card} style={{overflow: "hidden"}}>
                         <h2>Responsive Design</h2>
                         <p>Built for a fantastic mobile first experience</p>
-                        <img src={"/lana-mockup.png"} height={600} width={800}/>
+                        <Image src={"/lana-mockup.png"} height={"600"} width={"800"}/>
                     </div>
                     <div className={styles.card} style={{overflow: "hidden"}}>
                         <h2>Innovation without CVs</h2>
                         <p>Create applications without the need of CV</p>
-                        <img src={"./image_two.png"} height={640} width={360}/>
+                        <Image src={"/image_two.png"} height={"360"} width={"640"}/>
                     </div>
                 </div>
             </main>
