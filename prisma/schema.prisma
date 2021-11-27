@@ -8,28 +8,28 @@ datasource db {
 }
 
 model User {
-  id        Int      @id @default(autoincrement())
-  username  String   @unique @db.VarChar(255)
-  name      String   @db.VarChar(255)
-  email     String   @unique @db.VarChar(255)
-  createdAt DateTime @default(now()) @map("created_at")
-  updatedAt DateTime @updatedAt @map("updated_at")
-  companyId Int      @unique
-  company   Company  @relation(fields: [companyId], references: [id])
+  id           Int          @id @default(autoincrement())
+  username     String       @unique @db.VarChar(255)
+  name         String       @db.VarChar(255)
+  email        String       @unique @db.VarChar(255)
+  createdAt    DateTime     @default(now()) @map("created_at")
+  updatedAt    DateTime     @updatedAt @map("updated_at")
+  companyId    Int          @unique
+  company      Company      @relation(fields: [companyId], references: [id])
   applications Application[]
 }
 
 model Company {
-  id        Int      @id @default(autoincrement())
-  name      String   @db.VarChar(255)
-  location  String   @db.VarChar(255)
-  telephone String   @db.VarChar(255)
-  email     String   @unique @db.VarChar(255)
-  sic       String?  @db.VarChar(255)
-  verified  Boolean  @default(false)
-  postings  Posting?
-  users     User?
+  id           Int          @id @default(autoincrement())
+  name         String       @db.VarChar(255)
+  location     String       @db.VarChar(255)
+  telephone    String       @db.VarChar(255)
+  email        String       @unique @db.VarChar(255)
+  sic          String?      @db.VarChar(255)
+  verified     Boolean      @default(false)
   applications Application[]
+  postings     Posting[]
+  users        User[]
 }
 
 model Posting {
@@ -42,8 +42,8 @@ model Posting {
 
 model Application {
   id          Int     @id @default(autoincrement())
-  applicant User @relation(fields: [applicantId], references: [id])
   applicantId Int     @unique
-    poster Company @relation(fields: [posterId], references: [id])
-    posterId Int     @unique
+  posterId    Int     @unique
+  applicant   User    @relation(fields: [applicantId], references: [id])
+  poster      Company @relation(fields: [posterId], references: [id])
 }
