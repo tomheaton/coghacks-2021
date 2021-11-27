@@ -51,7 +51,7 @@ const Home: NextPage = () => {
             <main className={styles.main}>
                 <div className={styles.grid}>
                     <div className={styles.card}>
-                        <h2>For Applicants:</h2>
+                        <h2>For Applicants</h2>
                         <p>
                             - Fill in a short skills test to discover your best skills
                             <br/>

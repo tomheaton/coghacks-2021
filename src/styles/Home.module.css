@@ -71,15 +71,17 @@
     border-color: #0070f3;
 }
 
-.card h2 {
+.card h1, .card h2 {
     margin: 0 0 1rem 0;
     font-size: 1.5rem;
+    color: black;
 }
 
 .card p {
     margin: 0;
     font-size: 1.25rem;
     line-height: 1.5;
+    color: black;
 }
 
 .logo {
@@ -94,46 +96,5 @@
     }
     .card {
         width: 90%;
-    }
-}
-
-/*TODO: button design*/
-.begin-button {
-    width: 200px;
-    border: 1px solid #eaeaea;
-    border-radius: 10px;
-    transition: color 0.15s ease, border-color 0.15s ease;
-}
-
-.navbar {
-    border: solid red 1px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-}
-
-.inner {
-    border: solid blue 1px;
-    display: flex;
-    margin-left: auto;
-    justify-items: end;
-}
-
-.slide-right {
-    width: 100%;
-    overflow: hidden;
-    margin-left: 300px;
-    max-width: 500px
-}
-
-.slide-right h1 {
-    animation: 2s slide-right 2s forwards;
-    transform: translateX(-100%);
-}
-
-@keyframes slide-right {
-    to {
-        transform: translateX(0);
     }
 }
