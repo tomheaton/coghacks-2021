@@ -77,8 +77,8 @@ const Home: NextPage = () => {
             <main className={styles.main}>
                 <div className={styles.grid}>
                     <div className={styles.card} style={{overflow: "hidden"}}>
-                        <h2>heading</h2>
-                        <p>lololol</p>
+                        <h2>Responsive Design</h2>
+                        <p>Built for a fantastic mobile first experience</p>
                         <Image src={"/lana-mockup.png"} height={600} width={800}/>
                     </div>
                     <div className={styles.card}>

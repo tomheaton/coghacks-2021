@@ -8,6 +8,10 @@
     flex-direction: row;
 }
 
-.profileImage {
+.imageWrapper {
+    padding: 20px;
+}
+
+.image {
     border-radius: 50%;
 }

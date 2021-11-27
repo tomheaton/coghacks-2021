@@ -3,7 +3,7 @@ import styles from "../styles/Join.module.css";
 
 const Join: NextPage = () => {
 
-    const handleJoin = async (e: any) => {
+    const handleSubmit = async (e: any) => {
         e.preventDefault();
         console.log("join");
     }
@@ -13,12 +13,15 @@ const Join: NextPage = () => {
             <h1>
                 Join Lana!
             </h1>
-            <div className={styles.details}>
-                <input placeholder={"username"}/>
-                <input placeholder={"password"}/>
-                <button className={"btn"} onClick={handleJoin}>
-                    Join
-                </button>
+            <div>
+                <form onSubmit={handleSubmit} className={styles.details}>
+                    <input type={"text"} placeholder={"username"}/>
+                    <br/>
+                    <input type={"password"} placeholder={"password"}/>
+                    <button className={"btn"} type={"submit"}>
+                        Join
+                    </button>
+                </form>
             </div>
         </div>
     );

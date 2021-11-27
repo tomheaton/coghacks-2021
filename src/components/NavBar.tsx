@@ -28,7 +28,9 @@ const NavBar = () => {
                                 <Navbar.Text>
                                     Signed in as: <a href={"/api/auth/logout"}>{user.name}</a>
                                 </Navbar.Text>
-                                <Image className={styles.profileImage} src={user.picture ? user.picture : "/default.png"} height={40} width={40} />
+                                <div className={styles.imageWrapper} >
+                                    <Image className={styles.image} src={user.picture ? user.picture : "/default.png"} height={40} width={40} />
+                                </div>
                             </>
                         ) : (
                             <>
